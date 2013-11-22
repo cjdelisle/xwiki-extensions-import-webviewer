@@ -1,0 +1,15 @@
+{
+    "author": "Caleb James DeLisle",
+    "name": "xwiki-extensions-import-webviewer",
+    "description": "Import a WebViewer from webviewers.org to extensions.xwiki.org",
+    "version": "0.1.0",
+    "repository": {
+        "url": "https://github.com/WebViewers/xwiki-extensions-import-webviewer.git",
+        "type": "git"
+    },
+    "dependencies": {
+        "xwiki-tools": "~0.3.4",
+        "nthen": "~0.1.0",
+        "xmhell": "~0.1.2"
+    }
+}

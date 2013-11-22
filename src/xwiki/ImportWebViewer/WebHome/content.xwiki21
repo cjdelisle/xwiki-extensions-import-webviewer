@@ -1,0 +1,26 @@
+= Convert WebViewer to XWiki Extension =
+{{velocity}}
+#set($webviewer = $request.getParameter('webviewer'))
+#if (!$webviewer)
+{{html clean="false"}}
+<form method="post">
+  <dl>
+    <dt><label for="webviewer">Name of the WebViewer to import:</label></dt>
+    <dd><input type="text" name="webviewer"></dd>
+  
+    <dt><label for="user">webviewers.org username:</label></dt>
+    <dd><input type="text" name="user" value="downloader"></dd>
+
+    <dt><label for="password">webviewers.org password:</label></dt>
+    <dd><input type="password" name="password"></dd>
+  </dl>
+  <input type="submit" value="Submit">
+</form>
+{{/html}}
+#else
+  #set($webviewer = $request.get("webviewer"))
+  #set($user = $request.get("user"))
+  #set($password = $request.get("password"))
+  $xwiki.parseGroovyFromPage('GroovyCode').main($webviewer, $user, $password, $xcontext)
+#end
+{{/velocity}}
