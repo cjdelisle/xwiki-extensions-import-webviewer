@@ -37,6 +37,7 @@ public String main(String name, String user, String password, Object xcontext)
     def xc = xcontext.getContext();
     def wiki = xc.getWiki();
     def doc = wiki.getDocument("Extension", name+" webviewer", xc);
+    doc.setParent("Extension.WebHome");
     doc.setAuthor(xc.getUser());
     doc.setContentAuthor(xc.getUser());
     doc.setCreator(xc.getUser());
